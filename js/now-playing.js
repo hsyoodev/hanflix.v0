@@ -12,24 +12,25 @@ axios
   .then((response) => {
     movies = response.data.results;
     isLoading = false;
-    // view
-    window.onload = () => {
-      const movieList = document.querySelector("#movieList");
-      const movieSearch = document.querySelector("#movieSearch");
-      movieSearch.addEventListener("submit", (event) => {
-        event.preventDefault();
-        // 검색 기능 개발 예정
-      });
-      if (isLoading) {
-        // 로딩 화면 개발 예정
-      } else {
-        movieList.innerHTML = getMovieListHtml();
-      }
-    };
   })
   .catch((error) => {
     console.log(error);
   });
+
+// view
+window.onload = () => {
+  const movieList = document.querySelector("#movieList");
+  const movieSearch = document.querySelector("#movieSearch");
+  movieSearch.addEventListener("submit", (event) => {
+    event.preventDefault();
+    // 검색 기능 개발 예정
+  });
+  if (isLoading) {
+    // 로딩 화면 개발 예정
+  } else {
+    movieList.innerHTML = getMovieListHtml();
+  }
+};
 
 // function
 function getMovieListHtml() {
