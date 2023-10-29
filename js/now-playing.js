@@ -35,10 +35,10 @@ function getMovieListHtml(movies) {
         ? PLACEHOLDER_IMAGE_URL
         : `${IMAGE_BASE_URL}/${posterPath}`;
 
-    movieListHtml += `<div class="col">
+    movieListHtml += `<li class="col">
           <div class="card">
             <img src="${imgSrc}" class="card-img-top h-100" alt="Movie Poster" />
-            <a href="./movie.html?id=${id}" class="stretched-link"></a>
+            <a href="./movies/details.html?id=${id}" class="stretched-link"></a>
           </div>
           <div class="container mt-3">
             <p class="h6 fw-bold text-nowrap text-truncate">${title}</p>
@@ -55,7 +55,7 @@ function getMovieListHtml(movies) {
               <span class="small text-body-tertiary">${releaseDate}</span>
             </div>
           </div>
-        </div>`;
+        </li>`;
   });
 
   return movieListHtml;
@@ -65,7 +65,7 @@ function getLoadingHtml() {
   let loadingHtml = "";
 
   for (let i = 0; i < 20; i++) {
-    loadingHtml += `<div class="col placeholder-glow">
+    loadingHtml += `<li class="col placeholder-glow">
                       <div class="card">
                         <span
                           class="card-img-top placeholder h-100"
@@ -86,14 +86,16 @@ function getLoadingHtml() {
                           <span class="small">0.0 ~ 10.0</span>
                         </div>
                       </div>
-                    </div>`;
+                    </li>`;
   }
 
   return loadingHtml;
 }
 
 function getNotFoundHtml() {
-  return `<div class="col text-nowrap">검색결과가 없습니다.</div>`;
+  return `<li class="col text-nowrap">
+  <span>검색결과가 없습니다.</span>
+  </li>`;
 }
 
 function setMovieList(url) {

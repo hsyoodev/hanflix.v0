@@ -19,8 +19,8 @@
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- files -->
-    <link rel="stylesheet" href="./css/now-playing.css" />
-    <script src="./js/now-playing.js"></script>
+    <link rel="stylesheet" href="../css/now-playing.css" />
+    <script src="../js/now-playing.js"></script>
   </head>
   <body>
     <div>
@@ -31,7 +31,9 @@
         <nav class="navbar navbar-expand-lg shadow-sm bg-light-subtle">
           <h2 class="d-none">메인메뉴</h2>
           <div class="container-fluid">
-            <a class="navbar-brand fs-2 fw-bold" href="./index.html">HANFLIX</a>
+            <a class="navbar-brand fs-2 fw-bold" href="../index.html">
+              HANFLIX
+            </a>
             <button
               class="navbar-toggler"
               type="button"
@@ -52,30 +54,30 @@
                   <a
                     class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
                     aria-current="page"
-                    href="./index.html"
-                    >홈</a
-                  >
+                    href="../index.html"
+                    >홈
+                  </a>
                 </li>
                 <li class="nav-item pe-5">
                   <a
                     class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
-                    href="#"
-                    >인기</a
-                  >
+                    href="./popular.html"
+                    >인기
+                  </a>
                 </li>
                 <li class="nav-item pe-5">
                   <a
                     class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-100-hover"
                     href="./now-playing.html"
-                    >상영작</a
-                  >
+                    >상영작
+                  </a>
                 </li>
                 <li class="nav-item">
                   <a
                     class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
-                    href="#"
-                    >예정작</a
-                  >
+                    href="./upcoming.html"
+                    >예정작
+                  </a>
                 </li>
               </ul>
             </div>
@@ -83,9 +85,9 @@
         </nav>
       </header>
       <main class="hanflix-main">
-        <!-- 본문 -->
+        <!-- 현재상영 영화 본문 -->
         <article class="container">
-          <h2 class="d-none">현재 상영작 본문</h2>
+          <h2 class="d-none">현재상영 영화 본문</h2>
           <!-- 검색 -->
           <section class="pt-5">
             <div class="pt-5 row justify-content-center">
@@ -103,27 +105,36 @@
               </form>
             </div>
           </section>
-          <!-- 영화관 -->
+          <!-- 현재상영 영화 -->
           <section class="py-5">
             <div class="pt-5">
-              <h3 class="fw-bold">영화관</h3>
-              <!-- 현재 상영작 목록 -->
+              <h3 class="fw-bold">현재상영 영화</h3>
+              <!-- 현재상영 영화 목록 -->
               <section>
-                <h4 class="d-none">현재 상영작 목록</h4>
-                <div
+                <h4 class="d-none">현재상영 영화 목록</h4>
+                <ol
                   id="movieList"
-                  class="row row-cols-xxl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 g-4 pt-4"
-                ></div>
+                  class="row row-cols-xxl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 g-4 pt-4 list-unstyled"
+                ></ol>
               </section>
             </div>
           </section>
         </article>
       </main>
-      <footer class="hanflix-foot">
+      <footer class="hanflix-foot bg-light">
         <!-- 서비스 이용 정보 -->
-        <section class="bg-body-tertiary py-5">
+        <section class="py-5">
           <h2 class="d-none">서비스 이용 정보</h2>
-          <div class="container text-center">Copyright</div>
+          <div class="container text-center">
+            <span>
+              Copyright ©
+              <span class="fw-bold">
+                자바기반 스마트시티(세종) 공공기관 플랫폼 풀스택 개발자 1회차
+                A조 미니 프로젝트.
+              </span>
+              All rights reserved.
+            </span>
+          </div>
         </section>
       </footer>
     </div>
