@@ -11,10 +11,14 @@
   width: 330px;
 }
 
-article {
-  min-height: 729px;
+.hanflix-head {
+  height: 72px;
 }
 
-#movieList {
-  height: calc(100vh - 500px);
+.hanflix-foot {
+  height: 120px;
+}
+
+.hanflix-main {
+  min-height: calc(100vh - 192px);
 }
