@@ -24,82 +24,105 @@
   </head>
   <body>
     <div>
-      <h1 class="visually-hidden">HANFILX</h1>
-      <header>
-        <!-- menu -->
-        <nav class="shadow py-3">
-          <h2 class="visually-hidden">메인메뉴</h2>
-          <div class="container">
-            <ul class="nav justify-content-center gap-5">
-              <li class="nav-item">
-                <a
-                  class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
-                  href="./index.html"
-                  >홈</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
-                  href="./popular.html"
-                  >인기</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
-                  href="./now-playing.html"
-                  >상영작</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
-                  href="./upcoming.html"
-                  >예정작</a
-                >
-              </li>
-            </ul>
+      <!-- HANFLIX -->
+      <h1 class="d-none">HANFILX</h1>
+      <header class="sticky-top bg-light-subtle">
+        <!-- 메인메뉴 -->
+        <nav class="navbar navbar-expand-lg shadow-sm">
+          <h2 class="d-none">메인메뉴</h2>
+          <div class="container-fluid">
+            <a class="navbar-brand fs-2 fw-bold" href="./index.html">HANFLIX</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-center"
+              id="navbarNavDropdown"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item pe-5">
+                  <a
+                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
+                    aria-current="page"
+                    href="./index.html"
+                    >홈</a
+                  >
+                </li>
+                <li class="nav-item pe-5">
+                  <a
+                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
+                    href="#"
+                    >인기</a
+                  >
+                </li>
+                <li class="nav-item pe-5">
+                  <a
+                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity- link-opacity-100-hover"
+                    href="./now-playing.html"
+                    >상영작</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
+                    href="#"
+                    >예정작</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </nav>
       </header>
       <main>
+        <!-- 본문 -->
         <article class="container">
-          <h2 class="visually-hidden">본문</h2>
+          <h2 class="d-none">현재 상영작 본문</h2>
+          <!-- 검색 -->
           <section class="pt-5">
-            <!-- search -->
             <div class="pt-5 row justify-content-center">
-              <h3 class="visually-hidden">검색</h3>
-              <form id="movieSearch" class="w-50">
+              <h3 class="d-none">검색</h3>
+              <form class="search-form">
                 <div class="input-group">
                   <input
                     type="text"
+                    name="query"
                     class="form-control form-control-lg"
-                    placeholder="검색 기능 개발 예정"
+                    placeholder="영화 검색"
                   />
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">검색</button>
                 </div>
               </form>
             </div>
           </section>
-          <section class="pt-5">
-            <!-- movie -->
+          <!-- 영화관 -->
+          <section class="py-5">
             <div class="pt-5">
               <h3 class="fw-bold">영화관</h3>
-              <nav>
-                <h4 class="visually-hidden">현재 상영작 목록</h4>
+              <!-- 현재 상영작 목록 -->
+              <section>
+                <h4 class="d-none">현재 상영작 목록</h4>
                 <div
                   id="movieList"
                   class="row row-cols-xxl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 g-4 pt-4"
                 ></div>
-              </nav>
+              </section>
             </div>
           </section>
         </article>
       </main>
       <footer>
-        <section>
-          <h2 class="visually-hidden">footer 개발 예정</h2>
+        <section class="bg-body-tertiary py-5">
+          <h2 class="d-none">서비스 이용 정보</h2>
+          <div class="container text-center">Copyright</div>
         </section>
       </footer>
     </div>

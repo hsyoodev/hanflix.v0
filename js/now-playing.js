@@ -1,58 +1,111 @@
 const API_KEY = "892b79f98eae119619e5682f22a8c043";
 const MOVIE_BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
-const NOW_PLAYING_URL = `${MOVIE_BASE_URL}/movie/now_playing?api_key=${API_KEY}&language=ko-KR&region=KR`;
+const LANGUAGE_AND_REGION = "&language=ko-KR&region=KR";
+const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/240x357";
+
+const urlParams = new URL(location.href).searchParams;
+const query = urlParams.get("query");
 
 window.onload = () => {
   const movieList = document.querySelector("#movieList");
-  const movieSearch = document.querySelector("#movieSearch");
+  movieList.innerHTML = getLoadingHtml();
+
+  if (query !== null) {
+    const SEARCH_URL = `${MOVIE_BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}${LANGUAGE_AND_REGION}`;
+    setMovieList(SEARCH_URL);
+  } else {
+    const NOW_PLAYING_URL = `${MOVIE_BASE_URL}/movie/now_playing?api_key=${API_KEY}${LANGUAGE_AND_REGION}`;
+    setMovieList(NOW_PLAYING_URL);
+  }
+};
+
+function getMovieListHtml(movies) {
+  let movieListHtml = "";
+
+  movies.forEach((movie) => {
+    const posterPath = movie.poster_path;
+    const id = movie.id;
+    const title = movie.title;
+    const voteAverage = Math.round(movie.vote_average);
+    const popularity = Math.round(movie.popularity);
+    const releaseDate = movie.release_date;
+    const imgSrc =
+      posterPath === null
+        ? PLACEHOLDER_IMAGE_URL
+        : `${IMAGE_BASE_URL}/${posterPath}`;
+
+    movieListHtml += `<div class="col">
+          <div class="card">
+            <img src="${imgSrc}" class="card-img-top h-100" alt="Movie Poster" />
+            <a href="./movie.html?id=${id}" class="stretched-link"></a>
+          </div>
+          <div class="container mt-3">
+            <p class="h6 fw-bold text-nowrap text-truncate">${title}</p>
+            <div>
+              <span class="small">평점</span>
+              <span class="small text-danger">${voteAverage}
+              </span>
+              <span>/</span>
+              <span class="small">인기</span>
+              <span class="small text-danger">${popularity}</span>
+            </div>
+            <div>
+              <span class="small">개봉</span>
+              <span class="small text-body-tertiary">${releaseDate}</span>
+            </div>
+          </div>
+        </div>`;
+  });
+
+  return movieListHtml;
+}
+
+function getLoadingHtml() {
+  let loadingHtml = "";
+
+  for (let i = 0; i < 20; i++) {
+    loadingHtml += `<div class="col placeholder-glow">
+                      <div class="card">
+                        <span
+                          class="card-img-top placeholder h-100"
+                          alt="Movie Poster"
+                          />
+                      </div>
+                      <div class="container mt-3">
+                        <p class="h5 placeholder col-12">영화제목</p>
+                        <div class="placeholder col-12">
+                          <span class="small">평점</span>
+                          <span class="small">0.0 ~ 10.0</span>
+                          <span class="small">/</span>
+                          <span class="small">인기</span>
+                          <span class="small">0.0 ~</span>
+                        </div>
+                        <div class="placeholder col-12">
+                          <span class="small">평점</span>
+                          <span class="small">0.0 ~ 10.0</span>
+                        </div>
+                      </div>
+                    </div>`;
+  }
+
+  return loadingHtml;
+}
+
+function getNotFoundHtml() {
+  return `<div class="col text-nowrap">검색결과가 없습니다.</div>`;
+}
+
+function setMovieList(url) {
   axios
-    .get(NOW_PLAYING_URL)
+    .get(url)
     .then((response) => {
-      // movieList.innerHTML = getMovieListHtml(response.data.results);
+      let movies = response.data.results;
+
+      movieList.innerHTML =
+        movies.length === 0 ? getNotFoundHtml() : getMovieListHtml(movies);
     })
     .catch((error) => {
       console.log(error);
     });
-  movieList.innerHTML = getLoadingHtml();
-  movieSearch.addEventListener("submit", (event) => {
-    event.preventDefault();
-    // 검색 기능 개발 예정
-  });
-};
-
-// function
-function getMovieListHtml(movies) {
-  let movieListHtml = "";
-  movies.forEach((movie) => {
-    movieListHtml += `<div class="col">
-          <div class="card">
-            <img src="${IMAGE_BASE_URL}/${movie.poster_path}" class="card-img-top" alt="Movie Poster" />
-            <a href="./movie.html?id=${movie.id}" class="stretched-link"></a>
-          </div>
-          <div class="container mt-3">
-            <dl class="row">
-              <dt>${movie.title}</dt>
-              <dd>
-                평점, 개봉일 제공 기능
-              </dd>
-              <dd>
-                개발 예정
-              </dd>
-            </dl>
-          </div>
-        </div>`;
-  });
-  return movieListHtml;
-}
-function getLoadingHtml() {
-  let loadingHtml = "";
-  for (let i = 0; i < 20; i++) {
-    loadingHtml += `<div class="col">
-                      <div class="card>
-                        <img src="..." class="card-img-top" alt="Movie Poster" height="300px" />
-                      </div>
-                    </div>`;
-  }
-  return loadingHtml;
 }
