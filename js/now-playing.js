@@ -8,11 +8,11 @@ const urlParams = new URL(location.href).searchParams;
 const query = urlParams.get("query");
 
 window.onload = () => {
-  const SEARCH_URL = `${MOVIE_BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}${LANGUAGE_AND_REGION}`;
-  const NOW_PLAYING_URL = `${MOVIE_BASE_URL}/movie/now_playing?api_key=${API_KEY}${LANGUAGE_AND_REGION}`;
-
   const movieList = document.querySelector("#movieList");
   movieList.innerHTML = getLoadingHtml();
+
+  const SEARCH_URL = `${MOVIE_BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}${LANGUAGE_AND_REGION}`;
+  const NOW_PLAYING_URL = `${MOVIE_BASE_URL}/movie/now_playing?api_key=${API_KEY}${LANGUAGE_AND_REGION}`;
 
   setMovieList(query !== null ? SEARCH_URL : NOW_PLAYING_URL);
 };
