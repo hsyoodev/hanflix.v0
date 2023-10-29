@@ -3,32 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>HANFILX</title>
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- files -->
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/index.js"></script>
   </head>
   <body>
-    <div class="flex flex-row items-center">
-      <input
-        class="p-2 border-b-4 border-slate-300 focus:outline-none focus:border-slate-500"
-        type="search"
-        placeholder="search"
-      />
-      <svg
-        class="bg-slate-300"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="w-6 h-6"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-        />
-      </svg>
+    <div>
+      <!-- HANFLIX -->
+      <h1 class="d-none">HANFILX</h1>
+      <header class="hanflix-head sticky-top">
+        <!-- 메인메뉴 -->
+        <nav class="navbar navbar-expand-lg shadow-sm bg-light-subtle">
+          <h2 class="d-none">메인메뉴</h2>
+          <div class="container-fluid">
+            <a class="navbar-brand fs-2 fw-bold" href="./index.html">HANFLIX</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-center"
+              id="navbarNavDropdown"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item pe-5">
+                  <a
+                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-100-hover"
+                    aria-current="page"
+                    href="./index.html"
+                    >홈</a
+                  >
+                </li>
+                <li class="nav-item pe-5">
+                  <a
+                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
+                    href="#"
+                    >인기</a
+                  >
+                </li>
+                <li class="nav-item pe-5">
+                  <a
+                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
+                    href="./now-playing.html"
+                    >상영작</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
+                    href="#"
+                    >예정작</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="hanflix-main">
+        <!-- 본문 -->
+        <article class="container"></article>
+      </main>
+      <footer class="hanflix-foot">
+        <!-- 서비스 이용 정보 -->
+        <section class="bg-body-tertiary py-5">
+          <h2 class="d-none">서비스 이용 정보</h2>
+          <div class="container text-center">Copyright</div>
+        </section>
+      </footer>
     </div>
   </body>
 </html>
