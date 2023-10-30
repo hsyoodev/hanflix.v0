@@ -12,13 +12,12 @@ window.onload = () => {
   movieList.innerHTML = getLoadingHtml();
 
   const SEARCH_URL = `${MOVIE_BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}${QUERY_PARAMS}`;
-  const NOW_PLAYING_URL = `${MOVIE_BASE_URL}/movie/now_playing?api_key=${API_KEY}${QUERY_PARAMS}`;
-  setMovieListHtml(query !== null ? SEARCH_URL : NOW_PLAYING_URL);
+  const UPCOMING_URL = `${MOVIE_BASE_URL}/movie/upcoming?api_key=${API_KEY}${QUERY_PARAMS}`;
+  setMovieListHtml(query !== null ? SEARCH_URL : UPCOMING_URL);
 };
 
 function getMovieListHtml(movies) {
   let movieListHtml = "";
-
   movies.forEach((movie) => {
     const posterPath = movie.poster_path;
     const id = movie.id;
@@ -53,13 +52,11 @@ function getMovieListHtml(movies) {
           </div>
         </li>`;
   });
-
   return movieListHtml;
 }
 
 function getLoadingHtml() {
   let loadingHtml = "";
-
   for (let i = 0; i < 20; i++) {
     loadingHtml += `<li class="col placeholder-glow">
                       <div class="card">
@@ -83,14 +80,14 @@ function getLoadingHtml() {
                       </div>
                     </li>`;
   }
-
   return loadingHtml;
 }
 
 function getNotFoundHtml() {
-  return `<li class="col text-nowrap">
-  <span>검색결과가 없습니다.</span>
-  </li>`;
+  const notFoundHtml = `<li class="col text-nowrap">
+                          <span>검색결과가 없습니다.</span>
+                        </li>`;
+  return notFoundHtml;
 }
 
 function getErrorHtml(message) {

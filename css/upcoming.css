@@ -1,0 +1,24 @@
+.card {
+  height: 357px;
+  transition: all 0.5s;
+}
+
+.card:hover {
+  scale: 1.05;
+}
+
+.search-form {
+  width: 330px;
+}
+
+.hanflix-head {
+  height: 72px;
+}
+
+.hanflix-foot {
+  height: 120px;
+}
+
+.hanflix-main {
+  min-height: calc(100vh - 192px);
+}

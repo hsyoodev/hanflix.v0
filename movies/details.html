@@ -19,8 +19,8 @@
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- files -->
-    <link rel="stylesheet" href="../css/now-playing.css" />
-    <script src="../js/now-playing.js"></script>
+    <link rel="stylesheet" href="../css/details.css" />
+    <script src="../js/details.js"></script>
   </head>
   <body>
     <div>
@@ -69,7 +69,7 @@
                 </li>
                 <li class="nav-item pe-5">
                   <a
-                    class="nav-link link-secondary link-underline-opacity-0 link-opacity-100-hover"
+                    class="nav-link link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
                     href="./now-playing.html"
                     >상영작
                   </a>
@@ -87,39 +87,81 @@
         </nav>
       </header>
       <main class="hanflix-main">
-        <!-- 현재상영 영화 본문 -->
+        <!-- 영화 상세 본문 -->
         <article class="container">
-          <h2 class="d-none">현재상영 영화 본문</h2>
-          <!-- 검색 -->
-          <section class="pt-5">
-            <div class="pt-5 row justify-content-center">
-              <h3 class="d-none">검색</h3>
-              <form class="search-form z-1">
-                <div class="input-group">
-                  <input
-                    type="text"
-                    name="query"
-                    class="form-control form-control-lg"
-                    placeholder="영화 검색"
-                  />
-                  <button type="submit" class="btn btn-primary">검색</button>
-                </div>
-              </form>
-            </div>
-          </section>
-          <!-- 현재상영 영화 -->
+          <h2 class="d-none">영화 상세 본문</h2>
+          <!-- 영화 정보 -->
           <section class="py-5">
-            <div class="pt-5">
-              <h3 class="fw-bold">현재상영 영화</h3>
-              <!-- 현재상영 영화 목록 -->
-              <section>
-                <h4 class="d-none">현재상영 영화 목록</h4>
-                <ol
-                  id="movieList"
-                  class="row row-cols-xxl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 g-4 pt-4 list-unstyled"
-                ></ol>
-              </section>
+            <h3 id="outlineTitle" class="d-none">영화 제목</h3>
+            <!-- 기본정보 -->
+            <div class="card border-0 py-5">
+              <div id="basicInformation">
+                <div class="row placeholder-glow">
+                  <div
+                    class="rounded col-xl-3 col-lg-4 col-md-5 col-sm-6 col-12"
+                  >
+                    <!-- 포스터 -->
+                    <img
+                      class="img-fluid rounded placeholder w-100 mb-2 poster"
+                    />
+                  </div>
+                  <div class="col-xl-9 col-lg-8 col-md-7 col-sm-6 col-12">
+                    <div class="card-body ps-3 placeholder">
+                      <div>
+                        <p class="card-title fw-bold fs-2">title</p>
+                        <p class="card-text fw-bold fs-6">originalTitle</p>
+                      </div>
+                      <div>
+                        <dl class="row pt-4">
+                          <dt class="col-lg-2 col-3 text-body-tertiary">
+                            개봉
+                          </dt>
+                          <dd class="col-lg-10 col-9 p-0">releaseDate</dd>
+                          <dt class="col-lg-2 col-3 text-body-tertiary">
+                            평점
+                          </dt>
+                          <dd class="col-lg-10 col-9 p-0">voteAverage</dd>
+                          <dt class="col-lg-2 col-3 text-body-tertiary">
+                            장르
+                          </dt>
+                          <dd class="col-lg-10 col-9 p-0">genres</dd>
+                          <dt class="col-lg-2 col-3 text-body-tertiary">
+                            인기
+                          </dt>
+                          <dd class="col-lg-10 col-9 p-0">popularity</dd>
+                          <dt class="col-lg-2 col-3 text-body-tertiary">
+                            국가
+                          </dt>
+                          <dd class="col-lg-10 col-9 p-0">country</dd>
+                          <dt class="col-lg-2 col-3 text-body-tertiary">
+                            러닝타임
+                          </dt>
+                          <dd class="col-lg-10 col-8 p-0">runtime</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <!-- 탭 메뉴 -->
+            <div>
+              <ul class="nav nav-underline border-bottom fs-5">
+                <li class="nav-item">
+                  <a class="nav-link active">주요정보</a>
+                </li>
+              </ul>
+            </div>
+            <!-- 주요정보 -->
+            <section class="py-5">
+              <h4 class="d-none">주요정보</h4>
+              <!-- 개요 -->
+              <div id="keyInformation">
+                <div class="placeholder-glow">
+                  <p class="placeholder w-100 p-5">안녕</p>
+                </div>
+              </div>
+            </section>
           </section>
         </article>
       </main>

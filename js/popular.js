@@ -12,8 +12,8 @@ window.onload = () => {
   movieList.innerHTML = getLoadingHtml();
 
   const SEARCH_URL = `${MOVIE_BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}${QUERY_PARAMS}`;
-  const NOW_PLAYING_URL = `${MOVIE_BASE_URL}/movie/now_playing?api_key=${API_KEY}${QUERY_PARAMS}`;
-  setMovieListHtml(query !== null ? SEARCH_URL : NOW_PLAYING_URL);
+  const POPULAR_URL = `${MOVIE_BASE_URL}/movie/popular?api_key=${API_KEY}${QUERY_PARAMS}`;
+  setMovieListHtml(query !== null ? SEARCH_URL : POPULAR_URL);
 };
 
 function getMovieListHtml(movies) {

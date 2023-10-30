@@ -20,7 +20,11 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- files -->
     <link rel="stylesheet" href="./css/index.css" />
-    <script src="./js/index.js"></script>
+    <link rel="icon" href="./favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div>
@@ -31,7 +35,10 @@
         <nav class="navbar navbar-expand-lg shadow-sm bg-light-subtle">
           <h2 class="d-none">메인메뉴</h2>
           <div class="container-fluid">
-            <a class="navbar-brand fs-2 fw-bold" href="./index.html">HANFLIX</a>
+            <!-- 로고 -->
+            <a class="navbar-brand fs-2 fw-bold" href="../index.html">
+              HANFLIX
+            </a>
             <button
               class="navbar-toggler"
               type="button"
@@ -47,10 +54,11 @@
               class="collapse navbar-collapse justify-content-center"
               id="navbarNavDropdown"
             >
-              <ul class="navbar-nav">
+              <!-- 메뉴 -->
+              <ul class="navbar-nav fs-3 fw-bold">
                 <li class="nav-item pe-5">
                   <a
-                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-100-hover"
+                    class="nav-link link-secondary link-underline-opacity-0 link-opacity-100-hover"
                     aria-current="page"
                     href="./index.html"
                     >홈
@@ -58,21 +66,21 @@
                 </li>
                 <li class="nav-item pe-5">
                   <a
-                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
+                    class="nav-link link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
                     href="./movies/popular.html"
                     >인기
                   </a>
                 </li>
                 <li class="nav-item pe-5">
                   <a
-                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
+                    class="nav-link link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
                     href="./movies/now-playing.html"
                     >상영작
                   </a>
                 </li>
                 <li class="nav-item">
                   <a
-                    class="nav-link fs-3 fw-bold link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
+                    class="nav-link link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
                     href="./movies/upcoming.html"
                     >예정작
                   </a>
@@ -83,25 +91,298 @@
         </nav>
       </header>
       <main class="hanflix-main">
-        <!-- 본문 -->
-        <article class="container"></article>
+        <!-- 영화 홈 본문 -->
+        <article>
+          <h2 class="d-none">영화 홈 본문</h2>
+          <!-- 영화 티저 영상 -->
+          <section class="Movieplaydocuments placeholder-glow">
+            <h3 class="d-none">영화 티저 영상</h3>
+            <div id="mainmovieVisual">
+              <div id="player" class="placeholder"></div>
+            </div>
+            <!-- 홈 메뉴에 전체 백그라운드 제작 -->
+            <div id="firstHome" class="position-relative">
+              <div class="w-100" id="HomeBackground">
+                <div class="section_home">
+                  <div class="mainMovieDO">
+                    <div id="PlayMovieName" style="font-weight: 800">
+                      서울의 봄
+                    </div>
+                    <div id="PlayMivieLink">
+                      <a
+                        href="javascript:void(0)"
+                        class="btnone btnone--reverse"
+                        >예고편 보기</a
+                      >
+                    </div>
+                    <div
+                      id="popularMovieList"
+                      class="position-absolute top-80 start-50 translate-middle"
+                    >
+                      <div
+                        id="PMList"
+                        class="carousel carousel-dark slide d-block align-top text-center"
+                        data-bs-ride="carousel"
+                      >
+                        <div class="carousel-inner placeholder-glow">
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList11"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList12"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList13"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                        </div>
+                        <button
+                          class="carousel-control-prev"
+                          type="button"
+                          data-bs-target="#PMList"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button
+                          class="carousel-control-next"
+                          type="button"
+                          data-bs-target="#PMList"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="container py-5">
+            <!-- 인기영화 -->
+            <section class="py-5">
+              <h3 class="d-none">인기영화</h3>
+              <div class="middleMain nav justify-content-center">
+                <span>
+                  <p class="h2">인기영화</p>
+                  <div class="MoviesDocuments">
+                    <div id="slidePopular" class="mt-5">
+                      <div
+                        id="Spopular"
+                        class="carousel carousel-dark slide"
+                        data-bs-ride="carousel"
+                      >
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList21"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList22"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList23"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                        </div>
+                        <button
+                          class="carousel-control-prev"
+                          type="button"
+                          data-bs-target="#Spopular"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button
+                          class="carousel-control-next"
+                          type="button"
+                          data-bs-target="#Spopular"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </section>
+            <!-- 현재상영 영화-->
+            <section class="py-5">
+              <h3 class="d-none">현재상영 영화</h3>
+              <div class="middleMain nav justify-content-center">
+                <span>
+                  <p class="h2">현재상영 영화</p>
+                  <div class="MoviesDocuments">
+                    <div id="slidePopular" class="mt-5">
+                      <div
+                        id="Spopular"
+                        class="carousel carousel-dark slide"
+                        data-bs-ride="carousel"
+                      >
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList31"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList32"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList33"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                        </div>
+                        <button
+                          class="carousel-control-prev"
+                          type="button"
+                          data-bs-target="#Spopular"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button
+                          class="carousel-control-next"
+                          type="button"
+                          data-bs-target="#Spopular"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </section>
+            <!-- 개봉예정 영화-->
+            <section class="py-5">
+              <h3 class="d-none">개봉예정 영화</h3>
+              <div class="middleMain nav justify-content-center">
+                <span>
+                  <p class="h2">개봉예정 영화</p>
+                  <div class="MoviesDocuments">
+                    <div id="slidePopular" class="mt-5">
+                      <div
+                        id="Spopular"
+                        class="carousel carousel-dark slide"
+                        data-bs-ride="carousel"
+                      >
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList41"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList42"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                          <div class="carousel-item active">
+                            <div
+                              id="movieList43"
+                              class="card-wrapper container-sm d-flex justify-content-around"
+                            ></div>
+                          </div>
+                        </div>
+                        <button
+                          class="carousel-control-prev"
+                          type="button"
+                          data-bs-target="#Spopular"
+                          data-bs-slide="prev"
+                        >
+                          <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button
+                          class="carousel-control-next"
+                          type="button"
+                          data-bs-target="#Spopular"
+                          data-bs-slide="next"
+                        >
+                          <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                          ></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </section>
+          </div>
+        </article>
       </main>
       <footer class="hanflix-foot bg-light">
         <!-- 서비스 이용 정보 -->
         <section class="py-5">
           <h2 class="d-none">서비스 이용 정보</h2>
           <div class="container text-center">
-            <span>
+            <span class="small">
               Copyright ©
-              <span class="fw-bold">
-                자바기반 스마트시티(세종) 공공기관 플랫폼 풀스택 개발자 1회차
-                A조 미니 프로젝트.
-              </span>
+              <span class="fw-bold"> HANFLIX </span>
               All rights reserved.
             </span>
           </div>
         </section>
       </footer>
     </div>
+    <script src="./js/index.js"></script>
+    <script src="https://www.youtube.com/player_api"></script>
   </body>
 </html>

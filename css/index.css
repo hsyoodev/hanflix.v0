@@ -9,3 +9,165 @@
 .hanflix-main {
   min-height: calc(100vh - 192px);
 }
+
+@media screen and (max-width: 575px) {
+  #player {
+    max-height: 300px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #player {
+    max-height: 400px;
+  }
+}
+
+/* 박준선님 css */
+#firstHome {
+  width: 100vw;
+  height: 100%;
+  padding-bottom: 150px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+}
+
+#linkHome {
+  width: 1024px;
+  box-sizing: border-box;
+}
+
+.MoviesDocuments {
+  position: relative;
+}
+
+.Movieplaydocuments {
+  /* margin-top: 13px; */
+}
+
+#HomeBackground {
+  z-index: 0;
+}
+
+#home {
+  z-index: 1;
+}
+
+#popularMovieList {
+  width: 1100px;
+  padding: 0;
+}
+
+#PMList {
+  padding: 0;
+}
+
+.carousel-item active {
+  width: 204px;
+}
+
+#slidePopular {
+  width: 1100px;
+}
+
+#nowMovie {
+  width: 1100px;
+}
+
+#NextMovie {
+  width: 1100px;
+}
+
+.card {
+  margin-right: 20px;
+}
+
+#mainmovieVisual {
+  z-index: -1;
+}
+
+.youtube__cover {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.0001;
+  z-index: -0.5;
+}
+
+#player {
+  height: 700px;
+  /* height: 800px; */
+  opacity: 0.8;
+  width: 100%;
+  /* top: 72px; */
+  left: 0;
+  z-index: -1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 42px;
+  height: 42px;
+  outline: none;
+  border: 5px solid #000;
+  border-radius: 50%;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0.3;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  background-color: blanchedalmond;
+}
+
+#PlayMovieName {
+  display: flex;
+  position: absolute;
+  top: -550px;
+  left: 173px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 800;
+  z-index: 1;
+}
+
+.btnone {
+  position: absolute;
+  top: -500px;
+  left: 173px;
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  transition: 0.4s;
+  z-index: 1;
+}
+
+.btnone:hover {
+  opacity: 0.8;
+}
+
+.title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
