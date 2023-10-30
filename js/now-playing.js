@@ -14,7 +14,7 @@ window.onload = () => {
   const movieList = document.querySelector("#movieList");
   movieList.innerHTML = getLoadingHtml();
 
-  setMovieList(query !== null ? SEARCH_URL : NOW_PLAYING_URL);
+  setMovieListHtml(query !== null ? SEARCH_URL : NOW_PLAYING_URL);
 };
 
 function getMovieListHtml(movies) {
@@ -35,7 +35,7 @@ function getMovieListHtml(movies) {
     movieListHtml += `<li class="col">
           <div class="card">
             <img src="${imgSrc}" class="card-img-top h-100" alt="Movie Poster" />
-            <a href="./movies/details.html?id=${id}" class="stretched-link"></a>
+            <a href="./details.html?id=${id}" class="stretched-link"></a>
           </div>
           <div class="container mt-3">
             <p class="h6 fw-bold text-nowrap text-truncate">${title}</p>
@@ -95,11 +95,11 @@ function getNotFoundHtml() {
   </li>`;
 }
 
-function setMovieList(url) {
+function setMovieListHtml(url) {
   axios
     .get(url)
     .then((response) => {
-      let movies = response.data.results;
+      const movies = response.data.results;
 
       movieList.innerHTML =
         movies.length === 0 ? getNotFoundHtml() : getMovieListHtml(movies);

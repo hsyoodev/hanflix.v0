@@ -19,8 +19,8 @@
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- files -->
-    <link rel="stylesheet" href="../css/now-playing.css" />
-    <script src="../js/now-playing.js"></script>
+    <link rel="stylesheet" href="../css/details.css" />
+    <script src="../js/details.js"></script>
   </head>
   <body>
     <div>
@@ -69,7 +69,7 @@
                 </li>
                 <li class="nav-item pe-5">
                   <a
-                    class="nav-link link-secondary link-underline-opacity-0 link-opacity-100-hover"
+                    class="nav-link link-secondary link-underline-opacity-0 link-opacity-50 link-opacity-100-hover"
                     href="./now-playing.html"
                     >상영작
                   </a>
@@ -87,39 +87,36 @@
         </nav>
       </header>
       <main class="hanflix-main">
-        <!-- 현재상영 영화 본문 -->
+        <!-- 영화 상세 본문 -->
         <article class="container">
-          <h2 class="d-none">현재상영 영화 본문</h2>
-          <!-- 검색 -->
-          <section class="pt-5">
-            <div class="pt-5 row justify-content-center">
-              <h3 class="d-none">검색</h3>
-              <form class="search-form z-1">
-                <div class="input-group">
-                  <input
-                    type="text"
-                    name="query"
-                    class="form-control form-control-lg"
-                    placeholder="영화 검색"
-                  />
-                  <button type="submit" class="btn btn-primary">검색</button>
-                </div>
-              </form>
+          <h2 class="d-none">영화 상세 본문</h2>
+          <!-- 영화 정보 -->
+          <section>
+            <h3 class="d-none">영화 제목 - title</h3>
+            <!-- 기본정보 -->
+            <div class="card border-0 py-5">
+              <div id="movieBasics" class="row"></div>
             </div>
-          </section>
-          <!-- 현재상영 영화 -->
-          <section class="py-5">
-            <div class="pt-5">
-              <h3 class="fw-bold">현재상영 영화</h3>
-              <!-- 현재상영 영화 목록 -->
+            <!-- 탭 메뉴 -->
+            <div>
+              <ul class="nav nav-underline border-bottom fs-5">
+                <li class="nav-item">
+                  <a class="nav-link active">주요정보</a>
+                </li>
+              </ul>
+            </div>
+            <!-- 주요정보 -->
+            <section class="py-5">
+              <h4 class="d-none">주요정보</h4>
+              <!-- 개요 -->
+              <div>
+                <p id="basicInfo">overview</p>
+              </div>
+              <!-- 영상/포토 -->
               <section>
-                <h4 class="d-none">현재상영 영화 목록</h4>
-                <ol
-                  id="movieList"
-                  class="row row-cols-xxl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-2 g-4 pt-4 list-unstyled"
-                ></ol>
+                <h5 class="d-none">영상/포토</h5>
               </section>
-            </div>
+            </section>
           </section>
         </article>
       </main>
@@ -137,5 +134,7 @@
         </section>
       </footer>
     </div>
+    <!-- <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script> -->
   </body>
 </html>
