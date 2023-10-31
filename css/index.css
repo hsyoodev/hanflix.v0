@@ -21,6 +21,13 @@
     max-height: 400px;
   }
 }
+.card {
+  transition: all 0.5s;
+}
+
+.card:hover {
+  scale: 1.05;
+}
 
 /* 박준선님 css */
 #firstHome {
@@ -101,6 +108,10 @@
   z-index: -0.5;
 }
 
+.ytp-title {
+  display: none;
+}
+
 #player {
   height: 700px;
   /* height: 800px; */
@@ -136,17 +147,18 @@
   display: flex;
   position: absolute;
   top: -550px;
-  left: 173px;
+  left: 390px;
   color: #fff;
-  font-size: 30px;
-  font-weight: 800;
+  font-size: 70px;
+  font-weight: 100;
   z-index: 1;
+  font-family: "Nanum Brush Script", cursive;
 }
 
 .btnone {
   position: absolute;
-  top: -500px;
-  left: 173px;
+  top: -445px;
+  left: 420px;
   width: 130px;
   padding: 10px;
   border: 2px solid #333;

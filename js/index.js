@@ -238,6 +238,7 @@ function onYouTubePlayerAPIReady() {
       autoplay: true,
       loop: true,
       playlist: "YZTpiZS91BM",
+      controls: 0,
     },
     events: {
       onReady: function (event) {
@@ -245,6 +246,15 @@ function onYouTubePlayerAPIReady() {
         player.classList.remove("placeholder");
         event.target.mute();
         event.target.setPlaybackQuality("highres");
+      },
+      onStateChange: function (event) {
+        if (event.data === YT.PlayerState.PLAYING) {
+          const player = document.querySelector("#player");
+          // const title = document.querySelector(".ytp-title");
+          // const topButtons = document.querySelector(".ytp-chrome-top-buttons");
+          // const sesstionLink = document.querySelector(".yt-uix-sessionlink");
+          // console.log(title);
+        }
       },
     },
   });
