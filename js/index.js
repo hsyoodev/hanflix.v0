@@ -2,12 +2,10 @@ const API_KEY = "a5e43f90a600330cd1cca3a7adb9d067";
 const MOVIE_BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/240x357";
-const QUERY_PARAMS = "&language=ko-KR&page=1&region=KR";
+const QUERY_PARAMS = "&language=ko&page=1&region=KR";
 const POPULAR_URL = `${MOVIE_BASE_URL}/movie/popular?api_key=${API_KEY}${QUERY_PARAMS}`;
 const NOW_PLAYING_URL = `${MOVIE_BASE_URL}/movie/now_playing?api_key=${API_KEY}${QUERY_PARAMS}`;
 const UPCOMING_URL = `${MOVIE_BASE_URL}/movie/upcoming?api_key=${API_KEY}${QUERY_PARAMS}`;
-
-let count1 = 0;
 
 window.onload = () => {
   setMovieLis1And2tHtml(POPULAR_URL);
@@ -176,7 +174,6 @@ function setMovieLis4tHtml(url) {
     .get(url)
     .then((response) => {
       const movies = response.data.results;
-
       for (let i = 0; i < 5; i++) {
         const movie = movies[i];
         const id = movie.id;

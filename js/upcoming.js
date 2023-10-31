@@ -5,7 +5,7 @@ const API_KEY = "a5e43f90a600330cd1cca3a7adb9d067";
 const MOVIE_BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/240x357";
-const QUERY_PARAMS = "&language=ko-KR&page=1&region=KR";
+const QUERY_PARAMS = "&language=ko&page=1&region=KR";
 
 window.onload = () => {
   const movieList = document.querySelector("#movieList");
