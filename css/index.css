@@ -37,6 +37,14 @@
   -webkit-background-clip: text;
 }
 
+.logo {
+  font-family: "Merienda", cursive;
+  font-style: italic;
+  background: linear-gradient(to right top, #861657, #ffa69e);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
 /* 박준선님 css */
 #firstHome {
   width: 100vw;
