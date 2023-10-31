@@ -26,7 +26,15 @@
 }
 
 .card:hover {
-  scale: 1.05;
+  scale: 0.9;
+}
+
+#logo {
+  font-family: "Merienda", cursive;
+  font-style: italic;
+  background: linear-gradient(to right top, #861657, #ffa69e);
+  color: transparent;
+  -webkit-background-clip: text;
 }
 
 /* 박준선님 css */
@@ -51,10 +59,6 @@
   position: relative;
 }
 
-.Movieplaydocuments {
-  /* margin-top: 13px; */
-}
-
 #HomeBackground {
   z-index: 0;
 }
@@ -74,6 +78,10 @@
 
 .carousel-item active {
   width: 204px;
+}
+
+.carousel-inner {
+  overflow: hidden;
 }
 
 #slidePopular {
@@ -108,10 +116,6 @@
   z-index: -0.5;
 }
 
-.ytp-title {
-  display: none;
-}
-
 #player {
   height: 700px;
   /* height: 800px; */
@@ -124,7 +128,7 @@
 
 .carousel-control-prev,
 .carousel-control-next {
-  width: 42px;
+  /* width: 42px;
   height: 42px;
   outline: none;
   border: 5px solid #000;
@@ -140,7 +144,7 @@
   justify-content: center;
   align-items: center;
   transition: 0.4s;
-  background-color: blanchedalmond;
+  background-color: blanchedalmond; */
 }
 
 #PlayMovieName {
