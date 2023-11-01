@@ -109,10 +109,10 @@ async function getCountry(movie) {
     const countries = await axios.get(COUNTRIES_URL);
 
     let nativeNames = [];
-    for (let i = 0; i < productionCountries.length; i++) {
+    for (let productionCountry of productionCountries) {
       nativeNames.push(
         countries.data.filter(
-          (country) => country.iso_3166_1 === productionCountries[i].iso_3166_1
+          (country) => country.iso_3166_1 === productionCountry.iso_3166_1
         )[0].native_name
       );
     }

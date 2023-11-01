@@ -6,13 +6,13 @@ const MOVIE_BASE_URL = "https://api.themoviedb.org/3";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 const PLACEHOLDER_IMAGE_URL = "https://via.placeholder.com/240x357";
 const QUERY_PARAMS = "&language=ko-KR&page=1&region=KR";
+const SEARCH_URL = `${MOVIE_BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}${QUERY_PARAMS}`;
+const NOW_PLAYING_URL = `${MOVIE_BASE_URL}/movie/now_playing?api_key=${API_KEY}${QUERY_PARAMS}`;
 
 window.onload = () => {
   const movieList = document.querySelector("#movieList");
   movieList.innerHTML = getLoadingHtml();
 
-  const SEARCH_URL = `${MOVIE_BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}${QUERY_PARAMS}`;
-  const NOW_PLAYING_URL = `${MOVIE_BASE_URL}/movie/now_playing?api_key=${API_KEY}${QUERY_PARAMS}`;
   setMovieListHtml(query !== null ? SEARCH_URL : NOW_PLAYING_URL);
 };
 
